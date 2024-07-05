@@ -5,7 +5,8 @@ const tourController = require('./../controllers/tourController');
 const router = express.Router();
 
 //if route have 'id' param in it , then run this middleware...
-router.param('id',tourController.checkId);
+
+// router.param('id',tourController.checkId);
 
 //Create a checkBody middleware
 //Check if body contains the name and price property
@@ -15,7 +16,7 @@ router.param('id',tourController.checkId);
 router
 .route('/')
 .get(tourController.getAllTours)
-.post(tourController.checkBody,tourController.createTour);
+.post(tourController.createTour);
 
 router
 .route('/:id')
